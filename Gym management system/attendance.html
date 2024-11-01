@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="attendance.css">
+    <title>Attendance Management</title>
+</head>
+<body>
+    <header>
+        <h1 class="heading">Gym Management System</h1>
+        <p class="title">Attendance Management</p>
+    </header>
+    
+    <div class="container">
+        <div class="form-section">
+            <div class="attendance-box">
+                <h2>Mark Attendance</h2>
+                <input type="text" class="ele" placeholder="Member ID" required>
+                <input type="date" class="ele" required>
+                <button class="clkbtn">Submit</button>
+            </div>
+            
+            <div class="attendance-list">
+                <h2>Attendance List</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Member ID</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>2024-10-22</td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>2024-10-22</td>
+                        </tr>
+                        <!-- More rows can be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

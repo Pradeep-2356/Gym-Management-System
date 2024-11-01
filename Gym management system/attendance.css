@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    background-color: rgb(231, 231, 231);
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.heading {
+    color: #29a396;
+}
+
+.title {
+    font-weight: 400;
+    letter-spacing: 1.5px;
+}
+
+.container {
+    height: 600px;
+    width: 500px;
+    background-color: white;
+    box-shadow: 8px 8px 20px rgb(128, 128, 128);
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.attendance-box, .attendance-list {
+    width: 100%;
+}
+
+.attendance-box h2, .attendance-list h2 {
+    text-align: center;
+    color: #29a396;
+}
+
+.ele {
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: rgb(77, 77, 77);
+    background-color: rgb(240, 240, 240);
+    border-radius: 20px;
+    padding-left: 20px;
+    font-size: 16px;
+}
+
+.clkbtn {
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #29a396, #29a396);
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #29a396;
+}
+
+@media screen and (max-width: 650px) {
+    .container {
+        width: 300px;
+    }
+    .ele {
+        font-size: 14px;
+    }
+    .clkbtn {
+        font-size: 16px;
+    }
+}
