@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="membership_style.css">
+    <title>Gym Membership Options</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Your Gym Membership</h1>
+        <div class="membership-options">
+            <div class="card" onclick="selectMembership('Trial')">
+                <h2>Trial</h2>
+                <p>Type: 2 Days</p>
+                <p>Price: Free</p>
+                <p class="plan-desc">A perfect choice for those who want to test our gym facilities and classes. This 2-day trial allows you to explore and experience the environment without any cost.</p>
+                <button>Select</button>
+                <ol class="details">
+                    <li>Includes gym access</li>
+                    <li>Access to group classes</li>
+                </ol>
+            </div>
+            <div class="card" onclick="selectMembership('Basic')">
+                <h2>Basic</h2>
+                <p>Type: 3 Months</p>
+                <p>Price: &#8377; 3000</p>
+                <p class="plan-desc">Get started with a flexible 3-month plan that includes group classes and one personal training session to kickstart your fitness journey.</p>
+                <button>Select</button>
+                <ol class="details">
+                    <li>Includes gym access</li>
+                    <li>Access to group classes</li>
+                    <li>1 personal training session</li>
+                </ol>
+            </div>
+            <div class="card" onclick="selectMembership('Elite')">
+                <h2>Standard</h2>
+                <p>Type: 6 Months</p>
+                <p>Price: &#8377; 5750</p>
+                <p class="plan-desc">Our Elite membership gives you half a year of access to all classes, multiple personal training sessions, and a customized nutrition plan.</p>
+                <button>Select</button>
+                <ol class="details">
+                    <li>Includes gym access</li>
+                    <li>All classes available</li>
+                    <li>3 personal training sessions</li>
+                    <li>Nutrition plan</li>
+                </ol>
+            </div>
+            <div class="card" onclick="selectMembership('Premium')">
+                <h2>Premium</h2>
+                <p>Type: Annual</p>
+                <p>Price: &#8377; 9999</p>
+                <p class="plan-desc">Our best value plan! Enjoy an entire year of unlimited access to classes, priority booking, and premium benefits designed for committed fitness enthusiasts.</p>
+                <button>Select</button>
+                <ol class="details">
+                    <li>Includes all Elite benefits</li>
+                    <li>Unlimited classes</li>
+                    <li>Priority booking</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div id="membership-form" class="hidden">
+        <h1>Book Your Gym Membership</h1>
+        <form id="form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="membership-type">Membership Type:</label>
+            <input type="text" id="membership-type" name="membership-type" readonly required>
+
+            <label for="start-date">Start Date:</label>
+            <input type="date" id="start-date" name="start-date" required>
+
+            <button type="submit">Book Membership</button>
+        </form>
+    </div>
+
+    <script>
+       
+        function selectMembership(type) {
+            document.getElementById('membership-type').value = type;
+            document.getElementById('membership-form').classList.remove('hidden');
+            document.querySelector('.container').classList.add('hidden');
+        }
+    
+        
+        document.getElementById('form').onsubmit = function (event) {
+            event.preventDefault(); 
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+    
+            
+            localStorage.setItem('membershipData', JSON.stringify(data));
+    
+            
+            location.href = 'payment.html';
+        };
+    </script>
+    
+</body>
+</html>

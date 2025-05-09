@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(135deg, #6c2929, #483d89);
+}
+.hidden {
+    display: none;
+}
+
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.membership-options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    width: 260px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border-top: 5px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card:nth-child(1) {
+    border-top-color: #a3d2ca; /* Light green for Trial */
+}
+
+.card:nth-child(2) {
+    border-top-color: #5a8f7b; /* Teal for Basic */
+}
+
+.card:nth-child(3) {
+    border-top-color: #c9a3b3; /* Pink for Elite */
+}
+
+.card:nth-child(4) {
+    border-top-color: #d67d3e; /* Orange for Premium */
+}
+
+.card h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.plan-desc {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.details {
+    list-style-type: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.details li {
+    font-size: 0.9rem;
+    color: #555;
+    padding: 6px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.details li:before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #29a396;
+}
+
+.details li.unavailable:before {
+    content: '✖';
+    color: #d67d3e;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #29a396;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #239a87;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+form {
+    background-color: white;
+    margin-left: 85px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: left;
+}
+
+label {
+    margin: 10px 0 5px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

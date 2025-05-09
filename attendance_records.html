@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Records</title>
+    <link rel="stylesheet" href="attendance.css">
+</head>
+<body>
+    <header>
+        <h1 class="heading">Attendance Records</h1>
+        <p class="title">Enter User ID to fetch the records</p>
+    </header>
+
+    <div class="container">
+        <div class="form-section">
+            <input type="number" id="user_id" class="ele" placeholder="Enter User ID" required>
+            <button id="fetchAttendance" class="clkbtn">Fetch Attendance</button>
+        </div>
+
+        <table id="attendanceTable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        document.getElementById("fetchAttendance").addEventListener("click", function() {
+            const user_id = document.getElementById("user_id").value;
+
+            fetch(`http://localhost/gym-management-system/backend/get_attendance.php?user_id=${user_id}`)
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.getElementById("attendanceTable").getElementsByTagName('tbody')[0];
+                    tableBody.innerHTML = '';  // Clear previous records
+
+                    data.forEach(record => {
+                        const row = tableBody.insertRow();
+                        const dateCell = row.insertCell(0);
+                        const statusCell = row.insertCell(1);
+                        dateCell.textContent = record.date;
+                        statusCell.textContent = record.status;
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

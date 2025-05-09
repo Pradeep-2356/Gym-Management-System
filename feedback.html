@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; margin: 0; padding: 0;">
+
+<div style="width: 80%; max-width: 600px; margin: auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 50px;">
+    <h2 style="text-align: center; margin-bottom: 20px; color: #333;">Feedback Form</h2>
+    
+    <form id="feedbackForm" style="display: block;">
+        <label for="name" style="font-weight: bold; display: block; margin: 10px 0 5px;">Full Name</label>
+        <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 15px;">
+
+        <label for="email" style="font-weight: bold; display: block; margin: 10px 0 5px;">Email</label>
+        <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 15px;">
+
+        <label for="rating" style="font-weight: bold; display: block; margin: 10px 0 5px;">Rate Your Experience</label>
+        <select id="rating" name="rating" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 15px;">
+            <option value="5">Excellent</option>
+            <option value="4">Very Good</option>
+            <option value="3">Good</option>
+            <option value="2">Fair</option>
+            <option value="1">Poor</option>
+        </select>
+
+        <label for="comments" style="font-weight: bold; display: block; margin: 10px 0 5px;">Comments</label>
+        <textarea id="comments" name="comments" rows="5" placeholder="Share your experience..." required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 15px;"></textarea>
+
+        <button type="submit" style="padding: 10px 15px; background-color: #4CAF50; color: #fff; border: none; border-radius: 5px; cursor: pointer; width: 100%; font-size: 16px; margin-top: 10px;">Submit Feedback</button>
+    </form>
+
+    <!-- Message Container -->
+    <div id="thankYouMessage" style="display: none; text-align: center; margin-top: 20px; padding: 20px; background-color: #e8f5e9; color: #2e7d32; border: 1px solid #c8e6c9; border-radius: 5px; font-size: 18px;">
+        <p style="margin: 0;">Thank you for your feedback! We appreciate your input.</p>
+    </div>
+</div>
+<!--===========Footer=================-->
+<div class="footer">
+    <div class="links">
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="membership.html">Get Membership</a></li>
+            <li><a href="payment.html">Get Coupon</a></li>
+            <li><a href="contact.php">Contact Us</a></li>
+            <li><a href="features.html">About</a></li>
+        </ul>
+    </div>
+    <div class="links">
+        <h3>Fashion in Area</h3>
+        <ul>
+            <li><a href="shop.html">Gym Accessories</a></li>
+            <li><a href="diet.html">Helath tips</a></li>
+            <li><a href="exercise.html">Exercise tutorials</a></li>
+  
+            <li><a href="attendance.html">Check your attendance</a></li>
+        </ul>
+    </div>
+    <div class="links">
+        <h3>Support</h3>
+        <ul>
+            <li>Frequently Asked Questions</li>
+            <li>Report a Payment Issue</li>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+        </ul>
+    </div>
+  </div> <br><br>
+  <footer>
+  <div class="container flex">
+    <p class="tertiary">
+      &copy; 2024 FitNest GYM. All Rights Reserved
+    </p>
+  </div>
+  
+  </footer>
+
+<script>
+    // JavaScript to handle form submission and show thank you message
+    document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent actual form submission
+
+        // Hide the form and show the thank you message
+        document.getElementById("feedbackForm").style.display = "none";
+        document.getElementById("thankYouMessage").style.display = "block";
+    });
+</script>
+
+</body>
+</html>

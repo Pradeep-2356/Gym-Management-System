@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Attendance</title>
+    <link rel="stylesheet" href="attendance.css">
+</head>
+<body>
+    <header>
+        <h1 class="heading">Mark Attendance</h1>
+        <p class="title">Please fill in the details below</p>
+    </header>
+    
+    <div class="container">
+        <form id="attendanceForm" class="form-section">
+            <input type="number" id="user_id" class="ele" placeholder="User ID" required>
+            <input type="date" id="date" class="ele" required>
+            <select id="status" class="ele" required>
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+            <button type="submit" class="clkbtn">Mark Attendance</button>
+            <button class="clkbtn" onclick="window.location.href='attendance_records.html'">Check Attendance Records</button>
+        </form>
+        
+    </div>
+
+    <script>
+        document.getElementById("attendanceForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const user_id = document.getElementById("user_id").value;
+            const date = document.getElementById("date").value;
+            const status = document.getElementById("status").value;
+
+            fetch("http://localhost/gym-management-system/backend/mark_attendance.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                body: `user_id=${user_id}&date=${date}&status=${status}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
